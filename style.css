@@ -1,0 +1,258 @@
+/* =========================================
+   1. RESET E ESTILOS GLOBAIS
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffff; /* Fundo base da página */
+}
+
+/* =========================================
+   2. BARRA DE NAVEGAÇÃO (NAVBAR)
+   ========================================= */
+.navbar {
+  width: 100%;
+  background-color: #ffffff;
+  padding: 1rem 0;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 10px; /* Separa a imagem do texto */
+}
+
+.logo {
+  height: 40px; 
+}
+
+.logo-texto {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.logo-text-dark {
+  color: #2b7a2b; /* Verde escuro do "Plague" */
+}
+
+.logo-text-light {
+  color: #a8e063; /* Verde claro do "Hit" */
+}
+
+/* Menu de Navegação */
+.menu-wrapper {
+  background-color: #a8e063;
+  border-radius: 30px;
+  padding: 0.5rem 1.5rem;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.itens a {
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.itens a:hover {
+  color: #1a252f;
+}
+
+/* =========================================
+   3. SECÇÃO PRINCIPAL (HERO)
+   ========================================= */
+.hero {
+  padding: 4rem 0 6rem 0; 
+  background-color: #ffffff;
+}
+
+/* Contentor que força o alinhamento lado a lado e serve de base para as folhas */
+.hero-container {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  gap: 2rem; /* Espaçamento entre o texto e a imagem */
+  position: relative; /* Necessário para ancorar a imagem das folhas no fundo */
+}
+
+/* Imagem decorativa das folhas no fundo */
+.hero-container::before {
+  content: '';
+  position: absolute;
+  top: 55%; 
+  left: 45%; 
+  transform: translate(-50%, -50%);
+  width: 600px; 
+  height: 400px;
+  background-image: url('img/icon_fundo.png'); /* Certifique-se de que o nome do ficheiro está correto */
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: 0; /* Fica atrás de tudo */
+  pointer-events: none; /* Garante que não bloqueia o clique nos botões */
+}
+
+/* --- COLUNA ESQUERDA (Textos e Botões) --- */
+.hero-content {
+  flex: 1;
+  max-width: 50%; /* Evita que o texto empurre a imagem */
+  position: relative; 
+  z-index: 2; /* Garante que os textos e botões ficam acima das folhas decorativas */
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.texto-verde-claro {
+  color: #a8e063; 
+}
+
+.texto-verde-escuro {
+  color: #1c4b27;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* Botões */
+.hero-botoes {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.botao-primario {
+  background-color: #1c4b27;
+  color: #ffffff;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.botao-primario:hover {
+  background-color: #12331a;
+}
+
+.botao-secundario {
+  background-color: transparent;
+  color: #a8e063;
+  border: 2px solid #a8e063;
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.botao-secundario:hover {
+  background-color: #a8e063;
+  color: #ffffff;
+}
+
+/* --- COLUNA DIREITA (Imagem Principal) --- */
+.hero-imagem {
+  flex: 1;
+  max-width: 50%; /* Garante espaço para a imagem ficar ao lado */
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  z-index: 2; /* Fica acima das folhas decorativas de fundo */
+}
+
+.hero-imagem img {
+  width: 100%;
+  max-width: 550px;
+  border-radius: 40px; /* Arredonda os cantos da foto principal */
+  position: relative;
+  z-index: 2; /* Mantém a foto principal à frente da sua própria forma verde (sombra) */
+}
+
+/* Forma verde deslocada que fica atrás da foto principal */
+.hero-imagem::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 100%;
+  max-width: 550px;
+  height: 100%;
+  background-color: #a8e063;
+  border-radius: 40px;
+  z-index: 1; /* Mantém a forma imediatamente atrás da foto principal */
+}
+
+/* =========================================
+   4. RESPONSIVIDADE (Tablets e Telemóveis)
+   ========================================= */
+@media screen and (max-width: 900px) {
+  .hero-container {
+    flex-direction: column; /* Empilha o texto e a imagem na vertical */
+    text-align: center;
+    gap: 3rem;
+  }
+
+  /* Oculta ou reposiciona as folhas decorativas no telemóvel (opcional) */
+  .hero-container::before {
+    top: 30%;
+    left: 50%;
+    width: 400px; /* Reduz o tamanho das folhas para telas menores */
+    opacity: 0.3; /* Deixa mais subtil para não atrapalhar a leitura do texto empilhado */
+  }
+
+  .hero-content {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-imagem {
+    max-width: 100%;
+    justify-content: center;
+  }
+  
+  .hero-imagem::before {
+    /* Ajusta o fundo deslocado no telemóvel para não causar scroll horizontal */
+    right: 0; 
+    left: 15px;
+  }
+
+  .hero-botoes {
+    justify-content: center;
+  }
+}

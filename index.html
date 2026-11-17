@@ -1,21 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>PlagueHit</title>
-</head>
-<body>
+    <link rel="icon" type="image/png" href="img/logo_plaguehit.png" />
+  </head>
+  <body>
     <header>
-        <nav class= "navbar">
-            <img src="img/logo.png" alt="Logo do site" class="logo">
+      <nav class="navbar">
+        <div class="navbar-container">
+          <a href="#" class="navbar-logo">
+            <img src="img/logo_icon.png" alt="Logo do site" class="logo" />
+            <div class="logo-texto">
+                <span class="logo-text-dark">Plague</span><span class="logo-text-light">Hit</span>
+            </div>
+          </a>
+          <div class="menu-wrapper">
             <ul class="menu">
-                <li class="itens"><a href="#">Início</a></li>
-                <li class="itens"><a href="#">Sobre</a></li>
-                <li class="itens"><a href="#">Contato</a></li>
+              <li class="itens"><a href="#problema">O Problema</a></li>
+              <li class="itens"><a href="#proposito">O Propósito</a></li>
+              <li class="itens"><a href="#tecnologia">Tecnologia</a></li>
+              <li class="itens"><a href="#sobre">Sobre nós</a></li>
             </ul>
-
-        </nav>
+          </div>
+        </div>
+      </nav>
     </header>
-</body>
+
+   <section id="inicio" class="hero">
+        <div class="hero-container">
+            
+            
+            <div class="hero-content">
+                <h1>
+                    <span class="texto-verde-claro">Veja a Praga</span><br>
+                    <span class="texto-verde-claro">Antes que ela</span><br>
+                    <span class="texto-verde-escuro">Atinja a</span><br>
+                    <span class="texto-verde-escuro">Lavoura</span>
+                </h1>
+
+                <p>
+                   Monitoramento em tempo real, histórico de telemetria e alertas para gestores e técnicos, com um sistema IoT de baixo custo via Wi-Fi.
+                </p>
+
+                <div class="hero-botoes">
+                    <a href="https://github.com/Augustoluissilva/plaguehit.git" class="botao-primario">Conheça o Projeto</a>
+                    <a href="#tecnologia" class="botao-secundario">Ver Tecnologia</a>
+                </div>
+            </div> 
+
+            
+            <div class="hero-imagem">
+                <img src="img/imagem_agricula.png" alt="Homem usando óculos de realidade virtual na lavoura" />
+            </div>
+
+        </div>
+    </section>
+  </body>
 </html>
